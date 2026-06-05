@@ -76,6 +76,22 @@ where:
 - Δp is the neural-network-predicted correction field.
 - p_corrected is the corrected pressure field.
 
+# Current Limitations
 
+Although the framework demonstrates the feasibility of ML-enhanced FDTD simulation, several important limitations remain.
 
+## Lack of Psychoacoustic Training Data
 
+The ultimate objective is to learn corrections from psychoacoustic measurements.
+
+At present, the models are trained using analytical solutions rather than perceptual experimental data.
+
+Consequently, the learned correction improves numerical agreement with analytical solutions rather than improving perceptual accuracy.
+
+## Boundary Condition Consistency
+
+An important limitation of the current framework arises from the inconsistency between the boundary conditions used in the FDTD simulations and those assumed by the analytical solutions.
+
+The FDTD solver currently employs rigid (Neumann) boundary conditions, corresponding to a zero normal pressure gradient at the boundaries (∂p/∂n = 0). In contrast, the analytical solution effectively represents free-space wave propagation without reflective boundaries.
+
+It is hypothesized that replacing the rigid boundaries with absorbing boundary conditions could improve consistency with the analytical reference solutions and provide more meaningful training targets for the machine-learning correction models.

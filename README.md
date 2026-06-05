@@ -55,3 +55,27 @@ The model receives:
 and predicts a correction term，which is added directly to the source-point update.
 
 This strategy improves agreement with the analytical solution locally while preserving the original FDTD framework.
+
+# Method 2: Full 3D Pressure-Field Correction
+
+The method extends the correction mechanism from a single point to the entire three-dimensional pressure field. Instead of predicting a scalar correction value, a 3D convolutional encoder–decoder network learns a spatial correction field. Inputs include: 
+- Current pressure field
+- Previous pressure field -
+- Source frequency
+- Source strength
+- Simulation time
+
+The network predicts a spatial correction field, denoted as Δp(x, y, z, t), for every grid point in the computational domain.
+
+The predicted correction field is then added to the FDTD solution:
+
+p_corrected = p_FDTD + Δp
+
+where:
+- p_FDTD is the pressure field obtained from the standard FDTD solver.
+- Δp is the neural-network-predicted correction field.
+- p_corrected is the corrected pressure field.
+
+
+
+

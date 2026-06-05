@@ -30,7 +30,7 @@ As an initial proof-of-concept study, analytical solutions are used as surrogate
 
 The repository contains two generations of correction models:
 
-- Hybrid FDTD–ML 3D Local Source Correction.
+- Hybrid FDTD–ML Local Source Correction.
 - Hybrid FDTD–ML 3D Full-Field Correction.
 
 These studies demonstrate the feasibility of embedding machine learning directly into numerical wave solvers.

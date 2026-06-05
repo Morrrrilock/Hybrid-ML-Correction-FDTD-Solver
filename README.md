@@ -22,7 +22,8 @@ Learned Correction Model
 Embedded into FDTD Solver
             ↓
 Perceptually Improved Acoustic Simulation
-```text
+```
+
 However, psychoacoustic datasets suitable for this purpose are currently unavailable.
 
 As an initial proof-of-concept study, analytical solutions are used as surrogate ground-truth data to train neural networks that learn the discrepancy between standard FDTD solutions and reference solutions.
